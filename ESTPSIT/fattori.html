@@ -1,0 +1,65 @@
+<html>
+  <head>
+
+<title>Document</title>
+
+<script>
+function analizi() {
+  let Max = -1;
+  let cont;
+  let fattori;
+  for (let i = 2; i < 1000; i++) {
+    cont = Fattori(i);
+    if (Max < cont) {
+      Max = cont;
+      fattori = i;
+    }
+  }
+  return fattori;
+}
+
+function numeri() {
+  let Max = -1;
+  let cont;
+  let fattori;
+  for (let i = 1000; i < 2000; i++) {
+    cont = Fattori(i);
+    if (Max < cont) {
+      Max = cont;
+      fattori = i;
+    }
+  }
+  return fattori;
+}
+
+function moltiplica() {
+  let num1 = analizi();
+  let num2 = numeri();
+  let moltiplicazione = num1 * num2;
+  document.getElementById("output1").innerText = num1;
+  document.getElementById("output2").innerHTML = num2;
+  document.getElementById("output3").innerHTML = moltiplicazione;
+}
+
+function Fattori(n) {
+  let cont = 0;
+  let divisione = n / 2;
+  for (let j = 1; j <= divisione; j++) {
+    if (n % j == 0) {
+      cont++;
+    }
+  }
+  return cont;
+}
+</script>
+</head>
+
+<body onload="moltiplica()">
+
+<p id="output1"></p>
+<p id="output2"></p>
+<p id="output3"></p>
+
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<SCRIPT Language='JavaScript'>
+
+    function inizia()
+    {
+       var b=document.getElementById('B');
+       
+       setInterval(function () {
+          
+          y=parseInt(b.offsetLeft);
+          x=parseInt(b.offsetParent);
+          y=y+20;
+          b.style.left=y;
+          x=x+20;
+          b.style.top=x;
+          if(x<100){
+          y=parseInt(b.offsetParent);
+          y=y+20;
+          b.style.left=y;
+          x=parseInt(b.offsetTop);
+          x=x+20;
+          b.style.top=x;
+          }
+          
+       },100);
+    }
+    
+    </SCRIPT>
+    
+    
+    <HTML>
+       <HEAD>
+       <TITLE>Prashar Sachin</TITLE>
+       </HEAD>
+    
+       <style type="text/css">
+         
+          #B
+          {
+             left:0px;
+             top:0px;
+    
+             background-color:purple;
+             color:black;
+             position:absolute;
+             height:50px;
+             width:50px;
+             text-align:center;
+             font-size:20px; 
+             border-width:1px;
+             border:solid black;
+          }
+    
+       </style>
+    
+    
+        <BODY onLoad="inizia()">
+    
+        <DIV id='B'></DIV>
+    
+       </BODY>
+    
+    </HTML>

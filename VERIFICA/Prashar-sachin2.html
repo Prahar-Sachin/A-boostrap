@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      function inizio() {
+        var a = document.getElementsByName("A");
+        var limite = a.length;
+        var cont = 0;
+        a[cont].style.backgroundColor = "red";
+        setInterval(() => {
+          if (cont < limite - 1) {
+            a[cont].style.backgroundColor = "yellow";
+            a[cont + 1].style.backgroundColor = "red";
+            cont++;
+          }
+          if (limite == 1) {
+            a[cont].style.backgroundColor = "red";
+          }
+          if (cont == limite - 1) {
+            cont = 0;
+            limite = limite - 1;
+          }
+        }, 300);
+      }
+    </script>
+    <style>
+      .box {
+        background-color: yellow;
+        float: left;
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+        border: 2px solid black;
+      }
+    </style>
+    <title>Verifica 2</title>
+  </head>
+  <body onload="inizio()">
+    <div class="box" name="A"></div>
+    <div class="box" name="A"></div>
+    <div class="box" name="A"></div>
+    <div class="box" name="A"></div>
+    <div class="box" name="A"></div>
+  </body>
+</html>
